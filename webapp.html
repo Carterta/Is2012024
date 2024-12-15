@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Web App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .menu-bar { background: hsl(243, 51%, 15%); display: flex; justify-content: center; padding: 10px; }
+    .menu-bar a { color: white; text-decoration: none; padding: 10px 20px; }
+    .menu-bar a:hover { background: #575757; }
+    .container { text-align: center; margin: 20px; }
+    button { padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="menu-bar">
+    <a href="index.html">Home</a>
+    <a href="about.html">Resume</a>
+    <a href="fromscratch.html">My Page</a>
+    <a href="#!">Riddles</a>
+  </div>
+  <div class="container">
+    <h1>Outland Short-Term Rental Riddles</h1>
+    <p>Click the button below to generate a random riddle!</p>
+    <button onclick="generateRiddle()">Generate Riddle</button>
+    <div id="output" style="margin-top: 20px; font-size: 1.2em;"></div>
+  </div>
+  <script>
+    const riddles = [
+      { q: "What has keys but can't open locks?", a: "A piano." },
+      { q: "What has to be broken before you can use it?", a: "An egg." },
+      { q: "What has a heart that doesn’t beat?", a: "An artichoke." },
+      { q: "I’m tall when I’m young, and I’m short when I’m old. What am I?", a: "A candle." }
+    ];
+    function generateRiddle() {
+      const r = riddles[Math.floor(Math.random() * riddles.length)];
+      document.getElementById('output').innerHTML = `<p><strong>Riddle:</strong> ${r.q}</p><p><strong>Answer:</strong> ${r.a}</p>`;
+    }
+  </script>
+</body>
+</html>
